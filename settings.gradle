@@ -1,0 +1,2 @@
+rootProject.name='Covital Android'
+include ':app'

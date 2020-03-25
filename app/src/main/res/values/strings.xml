@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Covital</string>
+    <string name="an_error_occured">Sorry, it seems there is something wrong, try again later.</string>
+    <string name="readme_filename">Readme.md</string>
+    <string name="loading_content">Loading content…</string>
+    <string name="login">Log in</string>
+    <string name="next">Next</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="diagnose">Diagnose</string>
+    <string name="measurements">Measurements</string>
+</resources>
