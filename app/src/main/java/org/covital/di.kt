@@ -12,6 +12,8 @@ import org.covital.diagnose.presentation.RegularDiagnoseActivity
 import org.covital.diagnose.presentation.RegularDiagnoseViewModel
 import org.covital.login.presentation.LoginActivity
 import org.covital.login.presentation.LoginViewModel
+import org.covital.measurements.presentation.MeasureFragment
+import org.covital.measurements.presentation.MeasureViewModel
 import org.covital.measurements.presentation.MeasurementsActivity
 import org.covital.measurements.presentation.MeasurementsViewModel
 import org.koin.android.ext.koin.androidContext
@@ -61,5 +63,9 @@ private val scopedModules = module {
 
     scope(named<MeasurementsActivity>()) {
         viewModel { MeasurementsViewModel(get()) }
+    }
+
+    scope(named<MeasureFragment>()) {
+        viewModel { (sharedViewModel: MeasurementsViewModel) -> MeasureViewModel(sharedViewModel) }
     }
 }

@@ -5,12 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import org.covital.R
 import org.covital.databinding.ActivityDiagnoseBinding
-import org.koin.androidx.scope.currentScope
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.androidx.scope.lifecycleScope
+import org.koin.androidx.viewmodel.scope.viewModel
 
 class RegularDiagnoseActivity : AppCompatActivity() {
 
-    private val regularDiagnoseViewModel: RegularDiagnoseViewModel by currentScope.viewModel(this)
+    private val regularDiagnoseViewModel: RegularDiagnoseViewModel by lifecycleScope.viewModel(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

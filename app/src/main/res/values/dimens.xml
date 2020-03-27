@@ -3,10 +3,13 @@
     <!-- Spacing -->
     <dimen name="spacing_normal">16dp</dimen>
 
+    <dimen name="general_screen_margin">24dp</dimen>
+
     <!-- Size -->
     <dimen name="thumbnail_height">80dp</dimen>
     <dimen name="thumbnail_width">140dp</dimen>
 
     <!-- Constraints -->
     <dimen name="match_constraint">0dp</dimen>
+
 </resources>

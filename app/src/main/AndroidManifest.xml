@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".login.presentation.LoginActivity">
+        <activity android:name=".measurements.presentation.MeasurementsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -21,7 +21,7 @@
         </activity>
         <activity android:name=".dashboard.presentation.DashboardActivity" />
         <activity android:name=".diagnose.presentation.RegularDiagnoseActivity" />
-        <activity android:name=".measurements.presentation.MeasurementsActivity" />
+        <activity android:name=".login.presentation.LoginActivity" />
     </application>
 
 </manifest>

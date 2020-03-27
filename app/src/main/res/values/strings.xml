@@ -8,4 +8,21 @@
     <string name="dashboard">Dashboard</string>
     <string name="diagnose">Diagnose</string>
     <string name="measurements">Measurements</string>
+
+    <string name="measure_screen_title">Place your finger in the camera</string>
+    <string name="measure_screen_description">1. Place your index finger fully covering the rear camera of the phone.
+    \n\n2. At the same time press the button using another finger until you see oxygen saturation levels</string>
+    <string name="measure_screen_button">Press here</string>
+
+    <string name="measurement_result_screen_title">Successful reading</string>
+    <string name="measurement_result_screen_description">This is the result of your oxygen saturation level</string>
+    <string name="measurement_result_screen_value">%d%%</string>
+    <string name="measurement_result_screen_button">Next</string>
+
+    <string name="improve_measurement_screen_title">Help us improve our measurements</string>
+    <string name="improve_measurement_screen_oximeter_reading">If a pulse oximeter device is available, please enter its measurement for research validation</string>
+    <string name="improve_measurement_screen_oximeter_reading_hint">Value</string>
+    <string name="improve_measurement_screen_oximeter_model">What oximeter model was used?</string>
+    <string name="improve_measurement_screen_oximeter_model_hint">Oximeter model</string>
+    <string name="improve_measurement_screen_button">Send info</string>
 </resources>
