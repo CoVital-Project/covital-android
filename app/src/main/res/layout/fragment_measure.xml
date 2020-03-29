@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+        <import type="android.view.View"/>
         <variable
             name="viewModel"
             type="org.covital.measurements.presentation.MeasureViewModel" />
@@ -14,12 +14,13 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:padding="@dimen/general_screen_margin"
+        android:keepScreenOn="true"
         >
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/measure_screen_title"
+            android:text="@{viewModel.titleText}"
             android:textSize="23sp"
             android:textStyle="bold"
             android:layout_marginTop="36dp"
@@ -30,13 +31,36 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="19sp"
-            android:text="@string/measure_screen_description"
+            android:text="@{viewModel.descriptionText}"
              />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="4"
+            android:layout_weight="2"
+            />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="@{viewModel.recording ? View.VISIBLE : View.GONE}"
+            style="?android:attr/progressBarStyleHorizontal"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="19sp"
+            android:textColor="#f00"
+            android:text="@string/measure_screen_error"
+            android:visibility="@{viewModel.showError ? View.VISIBLE : View.GONE}"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
             />
 
 
@@ -44,7 +68,7 @@
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/measure_screen_button"
+            android:text="@{viewModel.buttonText}"
             android:layout_gravity="center_horizontal"
             android:layout_marginVertical="24dp"
             android:padding="16dp"

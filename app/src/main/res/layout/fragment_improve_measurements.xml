@@ -32,20 +32,46 @@
             android:text="@string/improve_measurement_screen_oximeter_reading"
              />
 
-        <com.google.android.material.textfield.TextInputLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="16dp"
-            android:hint="@string/improve_measurement_screen_oximeter_reading_hint"
+            android:orientation="horizontal"
             >
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/reading"
-                android:layout_width="match_parent"
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:textSize="19sp"
-                />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_weight="1"
+                android:layout_marginVertical="16dp"
+                android:layout_marginEnd="4dp"
+                android:hint="@string/improve_measurement_screen_oximeter_reading_hint"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/reading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textSize="19sp"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:layout_marginVertical="16dp"
+                android:hint="@string/improve_measurement_screen_oximeter_bpm_hint"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/bpm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:textSize="19sp"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
