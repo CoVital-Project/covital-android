@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/graph"
+    app:startDestination="@id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="org.covital.dashboard.presentation.DashboardFragment"
+        android:label="Dashboard"
+        tools:layout="@layout/fragment_dashboard"
+        >
+        <action
+            android:id="@+id/action_dashboardFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_dashboardFragment_to_regularDiagnoseFragment"
+            app:destination="@id/regularDiagnoseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/regularDiagnoseFragment"
+        android:name="org.covital.diagnose.presentation.RegularDiagnoseFragment"
+        android:label="Regular Diagnose"
+        tools:layout="@layout/fragment_diagnose"
+        >
+        <action
+            android:id="@+id/action_regularDiagnoseFragment_to_measure_graph"
+            app:destination="@id/measure_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="org.covital.login.presentation.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login"
+        >
+        <action
+            android:id="@+id/action_loginFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
+    <navigation android:id="@+id/measure_graph"
+        app:startDestination="@id/measureFragment">
+        <fragment
+            android:id="@+id/measureFragment"
+            android:name="org.covital.measurements.presentation.MeasureFragment"
+            android:label="Measure"
+            tools:layout="@layout/fragment_measure">
+            <action
+                android:id="@+id/action_measureFragment_to_measurementResultFragment"
+                app:destination="@id/measurementResultFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/measurementResultFragment"
+            android:name="org.covital.measurements.presentation.MeasurementResultFragment"
+            android:label="MeasurementResult"
+            tools:layout="@layout/fragment_measurement_result" >
+            <action
+                android:id="@+id/action_measurementResultFragment_to_improveMeasurementsFragment"
+                app:destination="@id/improveMeasurementsFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/improveMeasurementsFragment"
+            android:name="org.covital.measurements.presentation.ImproveMeasurementsFragment"
+            android:label="Improve Measurements"
+            tools:layout="@layout/fragment_improve_measurements"
+            />
+    </navigation>
+</navigation>

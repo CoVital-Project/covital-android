@@ -1,14 +1,13 @@
 package org.covital.dashboard.presentation
 
-import android.content.Context
 import org.covital.common.presentation.BaseViewModel
-import org.covital.common.presentation.utils.Navigator
+import org.covital.common.presentation.Navigator
 
 class DashboardViewModel(
-    val navigator: Navigator
+    private val navigator: Navigator
 ) : BaseViewModel() {
 
-    fun onButtonClicked(context: Context) {
-        navigator.navigateToRegularDiagnose(context)
+    fun onButtonClicked() {
+        navigator.goTo(DashboardFragmentDirections.actionDashboardFragmentToRegularDiagnoseFragment())
     }
 }

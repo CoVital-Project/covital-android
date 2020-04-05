@@ -1,0 +1,15 @@
+class Environments {
+    String baseURL = ""
+}
+
+class EnvironmentItems {
+    Environments med = new Environments()
+    Environments users = new Environments()
+}
+
+EnvironmentItems environments = new EnvironmentItems()
+
+environments.med.baseURL = "https://guarded-crag-28391.herokuapp.com/api-docs/#/default/"
+environments.users.baseURL = "https://guarded-crag-28391.herokuapp.com/api-docs/#/default/"
+
+ext.environments = environments

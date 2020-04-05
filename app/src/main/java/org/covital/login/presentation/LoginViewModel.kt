@@ -1,15 +1,13 @@
 package org.covital.login.presentation
 
-import android.content.Context
 import org.covital.common.presentation.BaseViewModel
-import org.covital.common.presentation.utils.Navigator
+import org.covital.common.presentation.Navigator
 
 class LoginViewModel(
-    val navigator: Navigator
+    private val navigator: Navigator
 ) : BaseViewModel() {
 
-    fun onButtonClicked(context: Context) {
-        navigator.navigateToDashboardScreen(context)
+    fun onButtonClicked() {
+        navigator.goTo(LoginFragmentDirections.actionLoginFragmentToDashboardFragment())
     }
-
 }

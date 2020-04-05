@@ -16,15 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".measurements.presentation.MeasurementsActivity">
+        <activity android:name=".common.presentation.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".dashboard.presentation.DashboardActivity" />
-        <activity android:name=".diagnose.presentation.RegularDiagnoseActivity" />
-        <activity android:name=".login.presentation.LoginActivity" />
     </application>
 
 </manifest>

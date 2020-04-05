@@ -3,7 +3,6 @@ package org.covital
 import android.app.Application
 import androidx.camera.camera2.Camera2Config
 import androidx.camera.core.CameraXConfig
-import org.covital.initKoin
 
 class App : Application(), CameraXConfig.Provider {
 

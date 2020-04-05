@@ -4,7 +4,7 @@
     <data>
         <variable
             name="viewModel"
-            type="org.covital.dashboard.presentation.DashboardViewModel" />
+            type="org.covital.diagnose.presentation.RegularDiagnoseViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -15,7 +15,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/dashboard"
+            android:text="@string/diagnose"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -24,7 +24,7 @@
             android:id="@+id/button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{(view) -> viewModel.onButtonClicked(view.context)}"
+            android:onClick="@{(view) -> viewModel.onButtonClicked()}"
             android:text="@string/next"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

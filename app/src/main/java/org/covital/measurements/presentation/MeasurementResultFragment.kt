@@ -1,32 +1,23 @@
 package org.covital.measurements.presentation
 
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
 import org.covital.R
+import org.covital.common.presentation.BaseFragment
 import org.covital.databinding.FragmentMeasurementResultBinding
-import org.koin.androidx.viewmodel.ext.android.sharedViewModel
+import org.covital.sharedGraphViewModel
 
-class MeasurementResultFragment : Fragment() {
-    private val sharedViewModel: MeasurementsViewModel by sharedViewModel()
+class MeasurementResultFragment : BaseFragment<FragmentMeasurementResultBinding>() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val binding: FragmentMeasurementResultBinding = DataBindingUtil.inflate(
-            inflater, R.layout.fragment_measurement_result, container, false
-        )
-        binding.lifecycleOwner = this
+    override val layoutRes: Int = R.layout.fragment_measurement_result
+
+    private val sharedViewModel: MeasurementsViewModel by sharedGraphViewModel(R.id.measure_graph)
+
+    override fun setupBinding(binding: FragmentMeasurementResultBinding) {
+
         binding.measurement = resources.getString(
             R.string.measurement_result_screen_value,
             sharedViewModel.measuredValue
         )
         binding.viewModel = sharedViewModel
-        return binding.root
+
     }
 }

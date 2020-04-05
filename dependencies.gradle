@@ -1,0 +1,48 @@
+ext {
+    //android
+    minSdkVersion = 23
+    targetSdkVersion = 29
+    versionCode = 1
+    versionName = "1.0"
+    androidCompileSdkVersion = 29
+    testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    //libraries
+    //coroutines
+    coroutinesVersion = '1.3.5'
+    //android appcompat
+    appcompatVersion = '1.1.0'
+    //android KTX libs
+    coreKtxVersion = '1.2.0'
+    fragmentKtxVersion = '1.3.0-alpha03'
+    activityKtxVersion = '1.1.0'
+    //android UI libs
+    constraintlayoutVersion = '1.1.3'
+    recyclerviewVersion = '1.1.0'
+    materialVersion = '1.1.0'
+    //animation
+    lottieVersion = '3.3.0'
+    //markdownView
+    markdownViewVersion = '1.1.0'
+    //camera
+    cameraVersion = '1.0.0-beta01'
+    cameraViewVersion = '1.0.0-alpha08'
+    //flexbox
+    flexboxVersion = '2.0.0'
+    //android architecture component
+    navigationVersion = '2.2.0'
+    lifecycleVersion = '2.2.0'
+    //glide
+    glideVersion = '4.11.0'
+    //network
+    moshiVersion = '2.6.0'
+    // Not using 2.7.1 due to meta factory issue https://github.com/square/retrofit/issues/3280
+    retrofitVersion = '2.6.2'
+    retrofitCoverterVersion = '2.6.0'
+    okhttp3Version = '4.2.2'
+    //dependency injection
+    koinVersion = '2.1.5'
+    //test
+    junitVersion = '4.13'
+    testRunnerVersion = '1.2.0'
+    testEspressoCoreVersion = '3.2.0'
+}
