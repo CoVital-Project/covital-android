@@ -1,0 +1,50 @@
+version: 2.1
+defaults: &defaults
+  docker:
+    - image: circleci/android:api-29
+  environment:
+    TEST_FLAGS: " --stacktrace --configure-on-demand -PdisablePreDex"
+    _JAVA_OPTIONS: "-Xmx8192m -XX:ParallelGCThreads=4 -XX:ConcGCThreads=4 -XX:ParallelGCThreads=4 -Djava.util.concurrent.ForkJoinPool.common.parallelism=4"
+
+jobs:
+  unit_tests:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: covital-{{ checksum "build.gradle" }}
+      - run:
+          name: Android SDK Licenses
+          command: .circleci/android_sdk_licenses.sh
+      - run:
+          name: Dependencies
+          command: ./gradlew --no-daemon --stacktrace dependencies
+      - run:
+          name: Run All Unit Tests
+          command: ./gradlew -q testMedDebugUnitTest $TEST_FLAGS
+      - store_test_results:
+          path: "app/build/test-results/testMedDebugUnitTest"
+      - save_cache:
+          key: covital-{{ checksum "build.gradle" }}
+          paths:
+          - ~/.gradle
+
+
+workflows:
+  version: 2
+  commit:
+    jobs:
+      - unit_tests:
+          filters:
+            branches:
+              ignore:
+                - master
+                - develop
+  merged:
+    jobs:
+      - unit_tests:
+          filters:
+            branches:
+              only:
+                - master
+                - develop

@@ -8,6 +8,7 @@ apply from: '../environments.gradle'
 
 android {
     compileSdkVersion rootProject.ext.androidCompileSdkVersion
+    buildToolsVersion rootProject.ext.androidBuildToolsVersion
 
     defaultConfig {
         applicationId = "org.covital"
