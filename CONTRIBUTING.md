@@ -14,6 +14,6 @@ Ideally when making a PR for a bug fix there might be tests that show the bug is
 
 ## What to work on?
 
-We're discussing work in the Helpful Engineering slack channel, please reach out to Jordi in the `#project-monitoring-o2` channel there so we can coordinate.
+You should join the [Helpful Engineering](https://helpfulengineering.org/) Slack and join CoVital's channel there (`#project-covital-welcome`). You'll find a lot of resources for getting started with the project there. Please reach out to Jordi Saumell and Jason Pearson - one of us will help you get started.
 
-Right now we're working on the different flows outlined in [Miro here]() and getting the app flushed out.
+If you see an issue marked with `good first issue` please comment on it and make a PR. Almost everyone currently working on the project is contributing on weekends but you can expect feedback on issues within a day or so.
