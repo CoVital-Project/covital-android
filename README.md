@@ -38,7 +38,7 @@ To run our integration test suite locally:
 
 ## Contributing
 
-See our [guide on contributing](https://github.com/CoVital-Project/covital-android/blob/master/CONTRIBUTING.md) to the app and team.
+See our [guide on contributing](https://github.com/CoVital-Project/covital-android/blob/develop/CONTRIBUTING.md) to the app and team.
 
 When possible we should leverage the Kotlin's features to make our code more readable while also concise.
 
