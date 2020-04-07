@@ -38,9 +38,7 @@ To run our integration test suite locally:
 
 ## Contributing
 
-See our [guide on contributing](https://github.com/CoVital-Project/covital-android/blob/develop/CONTRIBUTING.md) to the app and team.
-
-When possible we should leverage the Kotlin's features to make our code more readable while also concise.
+Please see our [guide on contributing](https://github.com/CoVital-Project/covital-android/blob/develop/CONTRIBUTING.md), it explains how we work, resources to get started, and what we need help with.
 
 ## Code Style Guide
 
@@ -49,7 +47,9 @@ When possible we should leverage the Kotlin's features to make our code more rea
 
 ## Issue Tracking
 
-TBD
+You can find everything in [GitHub Issues](https://github.com/CoVital-Project/covital-android/issues).
+
+To see what we're currently working on look at the [Android Launch Project](https://github.com/CoVital-Project/covital-android/projects/1).
 
 ## Alert Monitoring
 
