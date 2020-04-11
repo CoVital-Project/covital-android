@@ -12,7 +12,7 @@ class MeasureViewModel(
     private var isFirstRecording = true
 
     private val _recording = MutableLiveData(false)
-    val recording: LiveData<Boolean> get() = _recording
+    val recording: LiveData<Boolean> = _recording
     val buttonEnabled = Transformations.map(_recording) { !it }
     val showError = Transformations.map(_recording) { isRecording ->
         val showError = !isFirstRecording && !isRecording
@@ -51,4 +51,5 @@ class MeasureViewModel(
         _recording.value = false
         isFirstRecording = true
     }
+
 }

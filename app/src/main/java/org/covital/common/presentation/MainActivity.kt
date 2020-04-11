@@ -9,6 +9,7 @@ import androidx.navigation.NavDirections
 import androidx.navigation.Navigation.findNavController
 import kotlinx.android.synthetic.main.activity_main.*
 import org.covital.R
+import org.covital.common.extensions.observe
 import org.covital.common.presentation.navigation.Route
 import org.koin.androidx.scope.lifecycleScope
 import org.koin.androidx.viewmodel.scope.viewModel
@@ -24,12 +25,12 @@ class MainActivity : AppCompatActivity() {
 
         findNavController(this, R.id.nav_host)
 
-        viewModel.getLiveRouting().observe(this, Observer { route ->
+        observe(viewModel.getLiveRouting()) { route ->
             when (route) {
                 is Route.Forward -> navigateTo(route.direction)
                 else -> navigateBack()
             }
-        })
+        }
     }
 
     override fun onResume() {

@@ -14,9 +14,9 @@ import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.Observer
-import kotlinx.android.synthetic.main.fragment_measure.progress_bar
+import kotlinx.android.synthetic.main.fragment_measure.*
 import org.covital.R
+import org.covital.common.extensions.observe
 import org.covital.common.presentation.BaseFragment
 import org.covital.databinding.FragmentMeasureBinding
 import org.covital.measurements.presentation.measurements.domain.O2Analyzer
@@ -68,7 +68,11 @@ class MeasureFragment : BaseFragment<FragmentMeasureBinding>() {
         }
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<String>,
+        grantResults: IntArray
+    ) {
         if (requestCode == REQUEST_CODE_PERMISSIONS) {
             if (allPermissionsGranted()) {
                 sharedViewModel.onCameraPermissionGranted()
@@ -90,13 +94,17 @@ class MeasureFragment : BaseFragment<FragmentMeasureBinding>() {
         analyzer?.onDestroy()
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         val view = super.onCreateView(inflater, container, savedInstanceState)
         requestCameraPermissions()
-        viewModel.recording.observe(viewLifecycleOwner, Observer {
+        observe(viewModel.recording) {
             if (it) onStartRecording()
             else resetCamera()
-        })
+        }
 
         return view
     }
