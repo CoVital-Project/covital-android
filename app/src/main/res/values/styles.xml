@@ -34,5 +34,12 @@
     </style>
 
     <style name="Content" parent="TextAppearance.AppCompat.Body1" />
+    <style name="DatePicker" parent="AppTheme" >
+        <item name="android:textSize">30sp</item>
+        <item name="android:calendarViewShown">false</item>
+        <item name="android:spinnersShown">true</item>
+        <item name="android:datePickerMode">spinner</item>
+    </style>
+
 
 </resources>

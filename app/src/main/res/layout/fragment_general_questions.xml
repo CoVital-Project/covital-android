@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="16dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="32dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32sp"
+            android:layout_marginBottom="32sp"
+            android:text="@string/general_questions"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/subTitle"
+            android:layout_width="match_parent"
+            android:layout_height="68dp"
+            android:layout_marginBottom="36sp"
+            android:text="@string/this_information_will_be_used_for_the_sole_purpose_of"
+            android:textSize="16sp" />
+
+        <View
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="?android:attr/listDivider" />
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="122dp">
+
+            <TextView
+                android:id="@+id/genderTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginBottom="12dp"
+                android:text="@string/gender"
+                android:textSize="19sp"
+                tools:textStyle="bold" />
+
+            <RadioButton
+                android:id="@+id/femaleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="@string/female" />
+
+            <RadioButton
+                android:id="@+id/maleButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="@string/male" />
+
+        </RadioGroup>
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:id="@+id/birthYearTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@string/year_of_birth"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+        <DatePicker
+            android:id="@+id/date_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/DatePicker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <View
+            android:id="@+id/divider3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:id="@+id/diagnosedTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Are You Diagnosed With:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/lungIssues"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@string/chronic_lung_issues" />
+
+        <TextView
+            android:id="@+id/cardiovascular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@string/cardiovascular_disease" />
+
+        <TextView
+            android:id="@+id/diabetes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@string/diabetes" />
+
+        <TextView
+            android:id="@+id/cancer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@string/cancer" />
+
+        <TextView
+            android:id="@+id/autoimmune"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:text="@string/autoimmune_disease" />
+
+        <Switch
+            android:id="@+id/diagnosedSwitch"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textOff="@android:string/no"
+            android:textOn="@android:string/yes" />
+
+        <View
+            android:id="@+id/divider4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:id="@+id/medicineTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/do_you_use_medicine_that_suppresses_your_immune_system"
+            android:textSize="15sp" />
+
+        <Switch
+            android:id="@+id/medicineSwitch"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:textOff="@android:string/no"
+            android:textOn="@android:string/yes" />
+
+        <Button
+            android:id="@+id/nextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:text="@string/next" />
+
+
+    </LinearLayout>
+</ScrollView>

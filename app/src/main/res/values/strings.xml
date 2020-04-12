@@ -30,4 +30,17 @@
     <string name="improve_measurement_screen_oximeter_model">What oximeter model was used?</string>
     <string name="improve_measurement_screen_oximeter_model_hint">Oximeter model</string>
     <string name="improve_measurement_screen_button">Send info</string>
+    <string name="gender">Gender</string>
+    <string name="general_questions">General Questions</string>
+    <string name="this_information_will_be_used_for_the_sole_purpose_of">This information will be used for the sole purpose of...</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="year_of_birth">Year of Birth</string>
+    <string name="chronic_lung_issues">• Chronic Lung Issues</string>
+    <string name="cardiovascular_disease">• Cardiovascular Disease</string>
+    <string name="diabetes">• Diabetes</string>
+    <string name="cancer">• Cancer</string>
+    <string name="autoimmune_disease">• Autoimmune Disease</string>
+    <string name="are_you_diagnosed_with">Are you Diagnosed with:</string>
+    <string name="do_you_use_medicine_that_suppresses_your_immune_system">Do You Use Medicine That Suppresses Your Immune System?</string>
 </resources>
