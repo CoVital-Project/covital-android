@@ -3,7 +3,6 @@ package org.covital.common.presentation
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.navigation.NavDestination
 import androidx.navigation.NavDirections
 import androidx.navigation.Navigation.findNavController
@@ -19,8 +18,8 @@ class MainActivity : AppCompatActivity() {
     private val viewModel: MainViewModel by lifecycleScope.viewModel(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.AppTheme)
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.activity_main)
 
         findNavController(this, R.id.nav_host)
@@ -47,16 +46,6 @@ class MainActivity : AppCompatActivity() {
         // TODO: Add subscription for navigation events
 
 
-//        vamp.getNavUpdates()
-//            .observeOn(AndroidSchedulers.mainThread())
-//            .subscribe(::navigateTo)
-//            .disposeOn(this, Lifecycle.Event.ON_STOP)
-//
-//        vamp.getNavBackUpdates()
-//            .observeOn(AndroidSchedulers.mainThread())
-//            .subscribe(::navigateBack)
-//            .disposeOn(this, Lifecycle.Event.ON_PAUSE)
-//
 //        vamp.getToastsUpdates()
 //            .observeOn(AndroidSchedulers.mainThread())
 //            .subscribe {

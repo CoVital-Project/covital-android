@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
+
+    <color name="primaryTextColor">@color/black</color>
+    <color name="secondaryTextColor">@color/white</color>
+
+    <color name="color_primary">#6200ee</color>
+    <color name="color_primary_variant">#9e47ff</color>
+    <color name="color_primary_dark">#3C0092</color>
+    <color name="color_on_primary">@color/white</color>
+    <color name="color_error">@color/orange_dark</color>
+    <color name="color_on_error">@color/white</color>
+    <color name="color_surface">@color/white</color>
+    <color name="color_on_surface">@color/black</color>
+    <color name="color_background">@color/gray_246</color>
+    <color name="color_on_background">@color/black</color>
+    <color name="color_primary_on_background">@color/color_primary</color>
+    <color name="color_status_bar">@color/white</color>
+
+    <color name="transparent">@color/transparent_white</color>
+    <color name="transparent_black">#00000000</color>
+    <color name="transparent_white">#00ffffff</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    <color name="overlay_dark">#88000000</color>
+
+    <color name="border_light">@color/gray_221</color>
+    <color name="border_dark">@color/gray_170</color>
+
+    <color name="gray_246">#fff6f6f6</color>
+    <color name="gray_238">#ffeeeeee</color>
+    <color name="gray_221">#ffdddddd</color>
+    <color name="gray_204">#ffcccccc</color>
+    <color name="gray_170">#ffaaaaaa</color>
+    <color name="gray_136">#ff888888</color>
+    <color name="gray_102">#666666</color>
+    <color name="gray_85">#ff555555</color>
+    <color name="gray_51">#ff333333</color>
+    <color name="gray_46">#ff2e2e2e</color>
+    <color name="gray_35">#ff232323</color>
+
+    <color name="teal">#00BCD4</color>
+    <color name="blue">#3F51B5</color>
+    <color name="orange_dark">#FF5722</color>
+    <color name="orange_light">#F8BD36</color>
+    <color name="green">#4CAF50</color>
+    <color name="yellow">#FFF59D</color>
+    <color name="peach">#F8BBD0</color>
+    <color name="lavender">#E1BEE7</color>
 </resources>

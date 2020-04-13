@@ -7,7 +7,11 @@ class DashboardViewModel(
     private val navigator: Navigator
 ) : BaseViewModel() {
 
-    fun onButtonClicked() {
+    fun onDiagnoseTapped() {
         navigator.goTo(DashboardFragmentDirections.actionDashboardFragmentToRegularDiagnoseFragment())
+    }
+
+    fun onAccountTapped() {
+        navigator.goTo(DashboardFragmentDirections.actionDashboardFragmentToAccountFragment())
     }
 }

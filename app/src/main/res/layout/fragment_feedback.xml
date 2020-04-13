@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="org.covital.feedback.presentation.FeedbackViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_surface"
+        >
+
+        <TextView
+            android:id="@+id/feedback_title"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:text="@string/send_us_your_feedback"
+            android:onClick="@{(view) -> viewModel.onBackTapped()}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:drawableStart="@drawable/ic_arrow_black_large"
+            android:drawablePadding="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            style="@style/AppTheme.HeadlineSurface"
+            />
+
+        <TextView
+            android:id="@+id/experience_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/how_was_your_experience_with_the_app_today"
+            app:layout_constraintTop_toBottomOf="@id/feedback_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            />
+
+        <RadioGroup
+            android:id="@+id/rating"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/experience_label"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"
+            >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/radio_constraints"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <ImageView
+                    android:id="@+id/very_dissatisfied"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/feedback_face_selectable"
+                    android:src="@drawable/feedback_face_very_dissatisfied"
+                    android:contentDescription="@string/very_dissatisfied"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/dissatisfied"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    android:onClick="@{(view) -> viewModel.onRatingTapped(1)}"
+                    />
+
+                <ImageView
+                    android:id="@+id/dissatisfied"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/feedback_face_selectable"
+                    android:src="@drawable/feedback_face_dissatisfied"
+                    android:contentDescription="@string/dissatisfied"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/very_dissatisfied"
+                    app:layout_constraintEnd_toStartOf="@id/meh"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    android:onClick="@{(view) -> viewModel.onRatingTapped(2)}"
+                    />
+
+                <ImageView
+                    android:id="@+id/meh"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/feedback_face_selectable"
+                    android:src="@drawable/feedback_face_neutral"
+                    android:contentDescription="@string/meh"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/dissatisfied"
+                    app:layout_constraintEnd_toStartOf="@id/satisfied"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    android:onClick="@{(view) -> viewModel.onRatingTapped(3)}"
+                    />
+
+                <RadioButton
+                    android:id="@+id/satisfied"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/feedback_face_selectable"
+                    android:button="@drawable/feedback_face_satisfied"
+                    android:buttonTint="@color/black"
+                    android:contentDescription="@string/satisfied"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/meh"
+                    app:layout_constraintEnd_toStartOf="@id/very_satisfied"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    android:onClick="@{(view) -> viewModel.onRatingTapped(4)}"
+                    android:checked="true"
+                    />
+
+                <ImageView
+                    android:id="@+id/very_satisfied"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/feedback_face_selectable"
+                    android:src="@drawable/feedback_face_very_satisfied"
+                    android:contentDescription="@string/very_satisfied"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/satisfied"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    android:onClick="@{(view) -> viewModel.onRatingTapped(5)}"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/feedback_input"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:text="@{viewModel.feedback}"
+            android:hint="@string/what_would_you_like_to_share_with_us"
+            app:layout_constraintTop_toBottomOf="@id/rating"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/send_feedback_button"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="24dp"
+            android:importantForAutofill="no"
+            style="@style/AppTheme.EditText"
+            />
+
+        <Button
+            android:id="@+id/send_feedback_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/send"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:enabled="false"
+            style="@style/AppTheme.Button"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

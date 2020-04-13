@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_primary">#9e47ff</color>
+    <color name="color_primary_variant">#AC62FF</color>
+    <color name="color_on_primary">@color/white</color>
+    <color name="color_error">@color/orange_light</color>
+    <color name="color_on_error">@color/black</color>
+    <color name="color_surface">@color/gray_35</color>
+    <color name="color_on_surface">@color/gray_246</color>
+    <color name="color_background">@color/black</color>
+    <color name="color_on_background">@color/gray_246</color>
+    <color name="color_status_bar">@color/black</color>
+    <color name="color_primary_on_background">@color/gray_246</color>
+</resources>

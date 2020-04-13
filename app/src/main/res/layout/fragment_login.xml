@@ -13,23 +13,64 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
+        <ImageView
+            android:id="@+id/logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/login"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/covital_logo"
+            android:tint="@color/color_primary"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/create_account_button"
+            app:layout_constraintVertical_bias="0.45"
+            android:importantForAccessibility="no"
+            />
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
+            android:id="@+id/create_account_button"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:onClick="@{(view) -> viewModel.onButtonClicked()}"
-            android:text="@string/next"
+            android:onClick="@{(view) -> viewModel.onCreateAccountTapped()}"
+            android:text="@string/create_account"
+            app:layout_constraintBottom_toTopOf="@id/sign_in_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="12dp"
+            style="@style/AppTheme.Button"
+            />
+
+        <Button
+            android:id="@+id/sign_in_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> viewModel.onSignInTapped()}"
+            android:text="@string/sign_in"
+            app:layout_constraintBottom_toTopOf="@id/terms_of_service_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="24dp"
+            style="@style/AppTheme.OutlinedButton"
+            />
+
+        <TextView
+            android:id="@+id/terms_of_service_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{(view) -> viewModel.onTermsOfServiceTapped()}"
+            android:text="@string/by_creating_an_account_i_accept_covital_s_nterms_of_service"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="12dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginBottom="24dp"
+            style="@style/AppTheme.TermsOfService"
+            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

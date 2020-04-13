@@ -21,6 +21,6 @@
         android:layout_marginTop="@dimen/spacing_normal"
         android:text="@string/an_error_occured"
         android:textAlignment="center"
-        android:textAppearance="@style/Title" />
+        style="?attr/subtitle" />
 
 </LinearLayout>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="viewModel"
+            type="org.covital.settings.presentation.SettingsViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/root_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:id="@+id/settings_title"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:text="@string/settings"
+            android:onClick="@{(view) -> viewModel.onBackTapped()}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:drawableStart="@drawable/ic_arrow_black_large"
+            android:drawablePadding="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            style="@style/AppTheme.HeadlineSurface"
+            />
+
+        <Button
+            android:id="@+id/change_email_button"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:text="@string/change_email"
+            android:onClick="@{(view) -> viewModel.onChangeEmailTapped()}"
+            app:layout_constraintTop_toBottomOf="@id/settings_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:drawableStart="@drawable/ic_arrow_black_large"
+            android:drawablePadding="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            style="@style/AppTheme.NavItemButton"
+            />
+
+        <ImageView
+            android:id="@+id/change_email_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_email"
+            app:layout_constraintTop_toTopOf="@id/change_email_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/change_email_button"
+            android:layout_marginEnd="24dp"
+            android:importantForAccessibility="no"
+            />
+
+        <Button
+            android:id="@+id/change_password_button"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:text="@string/change_password"
+            android:onClick="@{(view) -> viewModel.onChangePasswordTapped()}"
+            app:layout_constraintTop_toBottomOf="@id/change_email_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:drawableStart="@drawable/ic_arrow_black_large"
+            android:drawablePadding="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            style="@style/AppTheme.NavItemButton"
+            />
+
+        <ImageView
+            android:id="@+id/change_password_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_password"
+            app:layout_constraintTop_toTopOf="@id/change_password_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/change_password_button"
+            android:layout_marginEnd="24dp"
+            android:importantForAccessibility="no"
+            />
+
+        <Button
+            android:id="@+id/feedback_button"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:text="@string/send_app_feedback"
+            android:onClick="@{(view) -> viewModel.onFeedbackTapped()}"
+            app:layout_constraintTop_toBottomOf="@id/change_password_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:drawableStart="@drawable/ic_arrow_black_large"
+            android:drawablePadding="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            style="@style/AppTheme.NavItemButton"
+            />
+
+        <ImageView
+            android:id="@+id/feedback_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_feedback"
+            app:layout_constraintTop_toTopOf="@id/feedback_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/feedback_button"
+            android:layout_marginEnd="24dp"
+            android:importantForAccessibility="no"
+            />
+
+        <Button
+            android:id="@+id/about_button"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:text="@string/about_covital"
+            android:onClick="@{(view) -> viewModel.onAboutTapped()}"
+            app:layout_constraintTop_toBottomOf="@id/feedback_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:drawableStart="@drawable/ic_arrow_black_large"
+            android:drawablePadding="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            style="@style/AppTheme.NavItemButton"
+            />
+
+        <ImageView
+            android:id="@+id/about_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_info"
+            app:layout_constraintTop_toTopOf="@id/about_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/about_button"
+            android:layout_marginEnd="24dp"
+            android:importantForAccessibility="no"
+            />
+
+        <Button
+            android:id="@+id/help_button"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:text="@string/help"
+            android:onClick="@{(view) -> viewModel.onHelpTapped()}"
+            app:layout_constraintTop_toBottomOf="@id/about_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:drawableStart="@drawable/ic_arrow_black_large"
+            android:drawablePadding="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            style="@style/AppTheme.NavItemButton"
+            />
+
+        <ImageView
+            android:id="@+id/help_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_help"
+            app:layout_constraintTop_toTopOf="@id/help_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/help_button"
+            android:layout_marginEnd="24dp"
+            android:importantForAccessibility="no"
+            />
+
+        <Button
+            android:id="@+id/log_out_button"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:text="@string/log_out"
+            android:onClick="@{(view) -> viewModel.onLogOutTapped()}"
+            app:layout_constraintTop_toBottomOf="@id/help_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:drawableStart="@drawable/ic_arrow_black_large"
+            android:drawablePadding="16dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            style="@style/AppTheme.NavItemButton"
+            />
+
+        <ImageView
+            android:id="@+id/log_out_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_logout"
+            app:layout_constraintTop_toTopOf="@id/log_out_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/log_out_button"
+            android:layout_marginEnd="24dp"
+            android:importantForAccessibility="no"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

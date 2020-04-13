@@ -4,6 +4,8 @@ import androidx.annotation.IdRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.NavHostFragment
+import org.covital.account.presentation.AccountFragment
+import org.covital.account.presentation.AccountViewModel
 import org.covital.common.data.datasource.ItemsDataSource
 import org.covital.common.data.datasource.MoshiFactory
 import org.covital.common.data.datasource.remote.ApiServiceFactory
@@ -16,11 +18,15 @@ import org.covital.dashboard.presentation.DashboardFragment
 import org.covital.dashboard.presentation.DashboardViewModel
 import org.covital.diagnose.presentation.RegularDiagnoseFragment
 import org.covital.diagnose.presentation.RegularDiagnoseViewModel
+import org.covital.feedback.presentation.FeedbackFragment
+import org.covital.feedback.presentation.FeedbackViewModel
 import org.covital.login.presentation.LoginFragment
 import org.covital.login.presentation.LoginViewModel
 import org.covital.measurements.presentation.MeasureFragment
 import org.covital.measurements.presentation.MeasureViewModel
 import org.covital.measurements.presentation.MeasurementsViewModel
+import org.covital.settings.presentation.SettingsFragment
+import org.covital.settings.presentation.SettingsViewModel
 import org.koin.android.ext.android.getKoin
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -67,6 +73,18 @@ private val scopedModules = module {
 
     scope(named<DashboardFragment>()) {
         viewModel { DashboardViewModel(get()) }
+    }
+
+    scope(named<AccountFragment>()) {
+        viewModel { AccountViewModel(get()) }
+    }
+
+    scope(named<SettingsFragment>()) {
+        viewModel { SettingsViewModel(get()) }
+    }
+
+    scope(named<FeedbackFragment>()) {
+        viewModel { FeedbackViewModel(get()) }
     }
 
     scope(named<RegularDiagnoseFragment>()) {

@@ -7,7 +7,15 @@ class LoginViewModel(
     private val navigator: Navigator
 ) : BaseViewModel() {
 
-    fun onButtonClicked() {
+    fun onCreateAccountTapped() {
+        TODO("Not yet implemented")
+    }
+
+    fun onSignInTapped() {
         navigator.goTo(LoginFragmentDirections.actionLoginFragmentToDashboardFragment())
+    }
+
+    fun onTermsOfServiceTapped() {
+        TODO("Not yet implemented")
     }
 }

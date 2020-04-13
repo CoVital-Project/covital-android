@@ -9,7 +9,44 @@
     <dimen name="thumbnail_height">80dp</dimen>
     <dimen name="thumbnail_width">140dp</dimen>
 
+    <dimen name="minimum_hitbox">48dp</dimen>
+
     <!-- Constraints -->
     <dimen name="match_constraint">0dp</dimen>
+
+    <!-- Corners -->
+    <dimen name="corner_small">4dp</dimen>
+    <dimen name="corner_medium">10dp</dimen>
+    <dimen name="corner_large">30dp</dimen>
+
+
+
+    <!-- Borders -->
+    <dimen name="border_small">0.5dp</dimen>
+    <dimen name="border_medium">1dp</dimen>
+    <dimen name="border_large">2dp</dimen>
+
+    <!-- Text Sizes -->
+
+
+    <dimen name="text_size_xsmall">12sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_default">16sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_xlarge">20sp</dimen>
+    <dimen name="text_size_xxlarge">22sp</dimen>
+    <dimen name="text_size_xxxlarge">24sp</dimen>
+    <dimen name="text_size_xxxxlarge">26sp</dimen>
+    <dimen name="text_size_xxxxxlarge">28sp</dimen>
+    <dimen name="text_size_xxxxxxlarge">30sp</dimen>
+    <dimen name="text_size_xxxxxxxlarge">32sp</dimen>
+    <dimen name="text_size_xxxxxxxxlarge">36sp</dimen>
+
+    <dimen name="text_size_headline6">@dimen/text_size_xxlarge</dimen>
+    <dimen name="text_size_headline5">@dimen/text_size_xxxlarge</dimen>
+    <dimen name="text_size_headline4">@dimen/text_size_xxxxlarge</dimen>
+    <dimen name="text_size_headline3">@dimen/text_size_xxxxxlarge</dimen>
+    <dimen name="text_size_headline2">@dimen/text_size_xxxxxxlarge</dimen>
+    <dimen name="text_size_headline1">@dimen/text_size_xxxxxxxlarge</dimen>
 
 </resources>

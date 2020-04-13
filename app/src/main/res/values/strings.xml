@@ -6,7 +6,6 @@
     <string name="login">Log in</string>
     <string name="next">Next</string>
     <string name="dashboard">Dashboard</string>
-    <string name="diagnose">Diagnose</string>
     <string name="measurements">Measurements</string>
 
     <string name="measure_screen_title">Place your finger in the camera</string>
@@ -30,6 +29,35 @@
     <string name="improve_measurement_screen_oximeter_model">What oximeter model was used?</string>
     <string name="improve_measurement_screen_oximeter_model_hint">Oximeter model</string>
     <string name="improve_measurement_screen_button">Send info</string>
+
+    <string name="medical_diagnoses">Medical Diagnoses</string>
+    <string name="back_to_dashboard">Back to Dashboard</string>
+    <string name="overview">Overview</string>
+    <string name="my_covital_history">My CoVital History</string>
+    <string name="account">Account</string>
+    <string name="diagnose">Diagnose</string>
+    <string name="toggle_history_open">Toggle History Open</string>
+    <string name="settings">Settings</string>
+    <string name="help">Help</string>
+    <string name="about_covital">About CoVital</string>
+    <string name="send_app_feedback">Send App Feedback</string>
+    <string name="change_password">Change Password</string>
+    <string name="change_email">Change Email</string>
+    <string name="log_out">Log Out</string>
+    <string name="save">Save</string>
+    <string name="how_was_your_experience_with_the_app_today">How was your experience with the app today?</string>
+    <string name="send_us_your_feedback">Send us your feedback</string>
+    <string name="very_dissatisfied">Very Dissatisfied</string>
+    <string name="dissatisfied">Dissatisfied</string>
+    <string name="meh">Meh</string>
+    <string name="satisfied">Satisfied</string>
+    <string name="very_satisfied">Very Satisfied</string>
+    <string name="what_would_you_like_to_share_with_us">What would you like to share with us?</string>
+    <string name="send">Send</string>
+    <string name="by_creating_an_account_i_accept_covital_s_nterms_of_service">By creating an account, I accept CoVital\'s \n<u>Terms of Service</u></string>
+    <string name="create_account">Create Account</string>
+    <string name="sign_in">Sign In</string>
+    <string name="blood_oxygen">Hg O₂</string>
     <string name="gender">Gender</string>
     <string name="general_questions">General Questions</string>
     <string name="this_information_will_be_used_for_the_sole_purpose_of">This information will be used for the sole purpose of...</string>
