@@ -2,10 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.covital">
 
+    <!-- Standard Internet permissions -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 
+    <!-- Keeps the app from sleeping when a message or alarm is scheduled is received. -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!-- Access Camera -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <!-- Access Microphone -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
 
     <application
         android:name=".App"
@@ -23,6 +32,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Defaults Firebase Performance monitoring to disabled while allowing it to be enabled at runtime -->
+        <meta-data
+            android:name="firebase_performance_collection_enabled"
+            android:value="false" />
+
+        <!-- Defaults Firebase Analytics monitoring to disabled while allowing it to be enabled at runtime -->
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="false" />
     </application>
 
 </manifest>

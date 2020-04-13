@@ -21,9 +21,9 @@ jobs:
           command: ./gradlew --no-daemon --stacktrace dependencies
       - run:
           name: Run All Unit Tests
-          command: ./gradlew -q testMedDebugUnitTest $TEST_FLAGS
+          command: ./gradlew -q testInternalMedDebugUnitTest $TEST_FLAGS
       - store_test_results:
-          path: "app/build/test-results/testMedDebugUnitTest"
+          path: "app/build/test-results/testInternalMedDebugUnitTest"
       - save_cache:
           key: covital-{{ checksum "build.gradle" }}
           paths:

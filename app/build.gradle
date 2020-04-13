@@ -3,6 +3,9 @@ apply plugin: "kotlin-android"
 apply plugin: "kotlin-android-extensions"
 apply plugin: "kotlin-kapt"
 apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: "com.google.gms.google-services"
+apply plugin: "com.google.firebase.crashlytics"
+apply plugin: "com.google.firebase.firebase-perf"
 
 apply from: '../environments.gradle'
 
@@ -18,9 +21,35 @@ android {
         versionName rootProject.ext.versionName
         testInstrumentationRunner rootProject.ext.testInstrumentationRunner
     }
+
+    signingConfigs {
+        debug {
+            storeFile file("debug.keystore")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+        }
+        release {
+            if ("$System.env.RELEASE_STORE_PASSWORD" != "null") {
+                storeFile file("upload.keystore")
+                storePassword "$System.env.RELEASE_STORE_PASSWORD"
+                keyAlias "hinge"
+                keyPassword "$System.env.RELEASE_ALIAS_PASSWORD"
+            }
+        }
+    }
+
     buildTypes {
         debug {
-            minifyEnabled = false
+            crunchPngs false
+            debuggable true
+            minifyEnabled false
+            testCoverageEnabled false
+            FirebasePerformance {
+                instrumentationEnabled false
+            }
+            ext.betaDistributionGroupAliases = "internal-testers"
+            signingConfig signingConfigs.debug
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
         release {
@@ -29,15 +58,28 @@ android {
         }
     }
 
-    flavorDimensions "default"
+    flavorDimensions "env", "client"
     productFlavors {
         med {
-            dimension "default"
+            dimension "client"
             buildConfigField "String", "BASE_URL", "\"" + environments.med.baseURL + "\""
         }
         users {
-            dimension "default"
+            dimension "client"
             buildConfigField "String", "BASE_URL", "\"" + environments.users.baseURL + "\""
+        }
+        internal {
+            dimension "env"
+            missingDimensionStrategy "env", "internal"
+            applicationIdSuffix ".internal"
+            ext.betaDistributionGroupAliases = "internal-testers"
+
+            //only package english translations, and xxhdpi resources
+            resConfigs "en", "xxhdpi"
+        }
+        production {
+            dimension "env"
+            missingDimensionStrategy "env", "production"
         }
     }
 
@@ -75,6 +117,10 @@ dependencies {
     implementation "androidx.camera:camera-camera2:$cameraVersion"
     implementation "androidx.camera:camera-lifecycle:$cameraVersion"
     implementation "androidx.camera:camera-view:$cameraViewVersion"
+    //firebase
+    implementation "com.google.firebase:firebase-crashlytics:$firebaseCrashlyticsVersion"
+    implementation "com.google.firebase:firebase-perf:$firebasePerformanceVersion"
+    implementation "com.google.firebase:firebase-analytics:$firebaseAnalyticsVersion"
     //flexbox
     implementation "com.google.android:flexbox:$flexboxVersion"
     //date-time

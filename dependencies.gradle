@@ -36,6 +36,10 @@ ext {
     lifecycleVersion = '2.2.0'
     //glide
     glideVersion = '4.11.0'
+    //firebase
+    firebaseCrashlyticsVersion = '17.0.0-beta04'
+    firebasePerformanceVersion = '19.0.5'
+    firebaseAnalyticsVersion = '17.2.2'
     //network
     moshiVersion = '2.6.0'
     // Not using 2.7.1 due to meta factory issue https://github.com/square/retrofit/issues/3280

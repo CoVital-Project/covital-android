@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "375047225423",
+    "firebase_url": "https://helpful-monitoring-o2-dev.firebaseio.com",
+    "project_id": "helpful-monitoring-o2-dev",
+    "storage_bucket": "helpful-monitoring-o2-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:375047225423:android:69a9ac88d4c6c370426a3a",
+        "android_client_info": {
+          "package_name": "org.covital.internal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "375047225423-n7f6gr5g968sa54c3bm3lveppfqsfoqb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "org.covital.internal",
+            "certificate_hash": "18b2be2f90cc6eb184f31609516adc0865571a81"
+          }
+        },
+        {
+          "client_id": "375047225423-s7oqeu7p6ao5cie3911a0de372iom8cp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWan1GQCFMX47XotF9MI3H1LRfwzrIUpk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "375047225423-s7oqeu7p6ao5cie3911a0de372iom8cp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

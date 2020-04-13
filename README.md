@@ -13,7 +13,7 @@
 Opening the project should trigger a gradle sync.
 
 ```
-./gradlew :app:clean; ./gradlew :app:assembleMedDebug;
+./gradlew :app:clean; ./gradlew :app:assembleInternalMedDebug;
 ```
 
 ## Running Tests
@@ -21,19 +21,19 @@ Opening the project should trigger a gradle sync.
 CircleCI runs all of our unit tests. An example command for the `app` module is:
 
 ```
-./gradlew :app:testMedDebugUnitTest
+./gradlew :app:testInternalMedDebugUnitTest
 ```
 
 To run all unit tests at once
 
 ```
-./gradlew testMedDebugUnitTest
+./gradlew testInternalMedDebugUnitTest
 ```
 
 To run our integration test suite locally:
 
 ```
-./gradlew :app:connectedMedDebugAndroidTest
+./gradlew :app:connectedInternalMedDebugAndroidTest
 ```
 
 ## Contributing
@@ -53,8 +53,11 @@ To see what we're currently working on look at the [Android Launch Project](http
 
 ## Alert Monitoring
 
-TBD
+We collect and send anonymous data to these repositories:
+* Crash reports to [Firebase Crashlytics](https://console.firebase.google.com/u/2/project/helpful-monitoring-o2-dev/crashlytics/app/android:org.covital.internal/issues)
+* Performance data on network requests to [Firebase Performance](https://console.firebase.google.com/u/2/project/helpful-monitoring-o2-dev/performance/app/android:org.covital.internal/trends)
+* Metrics to [Firebase Analytics](https://console.firebase.google.com/u/2/project/helpful-monitoring-o2-dev/analytics/app/android:org.covital.internal/overview)
 
 ## Publishing
 
-TBD
+We publish our internal builds on [Firebase App Distribution](https://console.firebase.google.com/u/2/project/helpful-monitoring-o2-dev/appdistribution/app/android:org.covital.internal/releases).
