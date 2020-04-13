@@ -7,9 +7,8 @@ import androidx.navigation.fragment.NavHostFragment
 import org.covital.common.data.datasource.ItemsDataSource
 import org.covital.common.data.datasource.MoshiFactory
 import org.covital.common.data.datasource.remote.ApiServiceFactory
-import org.covital.common.data.datasource.remote.ItemsRemoteDataSource
-import org.covital.common.data.repository.ItemsDataRepository
-import org.covital.common.domain.ItemsRepository
+import org.covital.common.data.datasource.remote.ItemsGateway
+import org.covital.common.data.repository.ItemsRepository
 import org.covital.common.presentation.MainActivity
 import org.covital.common.presentation.MainViewModel
 import org.covital.common.presentation.Navigator
@@ -57,8 +56,8 @@ private val appModule = module {
 }
 
 private val dataModule = module {
-    factory<ItemsRepository> { ItemsDataRepository(get()) }
-    factory<ItemsDataSource> { ItemsRemoteDataSource(get()) }
+    factory { ItemsRepository(get()) }
+    factory { ItemsGateway(get()) }
 }
 
 private val scopedModules = module {

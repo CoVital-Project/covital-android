@@ -9,7 +9,7 @@ import retrofit2.converter.moshi.MoshiConverterFactory
 
 object ApiServiceFactory {
 
-    // Uppate this url with the real backend
+    // Update this url with the real backend
     private const val BASE_URL = "https://api.github.com"
 
     fun create(moshi: Moshi): ApiService {
