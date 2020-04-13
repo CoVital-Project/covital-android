@@ -20,6 +20,7 @@ object ApiServiceFactory {
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(client)
+            .addConverterFactory(EmptyResponseFactory())
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
             .create(ApiService::class.java)
