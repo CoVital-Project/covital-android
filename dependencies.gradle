@@ -29,6 +29,8 @@ ext {
     cameraViewVersion = '1.0.0-alpha08'
     //flexbox
     flexboxVersion = '2.0.0'
+    //date-time
+    threeTenVersion = '1.2.2'
     //android architecture component
     navigationVersion = '2.2.0'
     lifecycleVersion = '2.2.0'

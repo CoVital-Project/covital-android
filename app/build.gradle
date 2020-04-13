@@ -77,6 +77,8 @@ dependencies {
     implementation "androidx.camera:camera-view:$cameraViewVersion"
     //flexbox
     implementation "com.google.android:flexbox:$flexboxVersion"
+    //date-time
+    implementation "com.jakewharton.threetenabp:threetenabp:$threeTenVersion"
     //android architecture component
     implementation "androidx.navigation:navigation-fragment:$navigationVersion"
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"

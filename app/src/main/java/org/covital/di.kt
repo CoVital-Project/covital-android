@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.NavHostFragment
 import org.covital.common.data.datasource.ItemsDataSource
+import org.covital.common.data.datasource.MoshiFactory
 import org.covital.common.data.datasource.remote.ApiServiceFactory
 import org.covital.common.data.datasource.remote.ItemsRemoteDataSource
 import org.covital.common.data.repository.ItemsDataRepository
@@ -49,7 +50,8 @@ fun App.initKoin() {
 }
 
 private val appModule = module {
-    single { ApiServiceFactory.create() }
+    single { MoshiFactory.create() }
+    single { ApiServiceFactory.create(get()) }
     single { Navigator() }
     single { MeasurementsViewModel(get()) }
 }
