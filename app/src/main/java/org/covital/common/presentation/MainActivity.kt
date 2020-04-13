@@ -12,6 +12,7 @@ import org.covital.common.extensions.observe
 import org.covital.common.presentation.navigation.Route
 import org.koin.androidx.scope.lifecycleScope
 import org.koin.androidx.viewmodel.scope.viewModel
+import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
 
         try {
             findNavController(this, R.id.nav_host).apply {
+                Timber.d("Resuming app into ${currentDestination.getScreenName()}")
                 setAnalyticsScreenName(currentDestination)
             }
         } catch (ex: Throwable) {
@@ -62,7 +64,10 @@ class MainActivity : AppCompatActivity() {
 
             val processingBack = currentFragment?.onBackPressed() ?: false
             if (!processingBack) {
+                Timber.d("Backing out of ${currentDestination.getScreenName()}")
                 super.onBackPressed()
+            } else {
+                Timber.d("Remaining in ${currentDestination.getScreenName()}")
             }
 
             setAnalyticsScreenName(currentDestination)
@@ -97,8 +102,10 @@ class MainActivity : AppCompatActivity() {
 
         try {
             findNavController(this, R.id.nav_host).apply {
+                val from = currentDestination.getScreenName()
                 navigate(route)
                 setAnalyticsScreenName(currentDestination)
+                Timber.d("Routing from $from -> ${currentDestination.getScreenName()}")
             }
         } catch (ex: Exception) {
             /**
@@ -111,13 +118,14 @@ class MainActivity : AppCompatActivity() {
     private fun navigateBack() {
         findNavController(this, R.id.nav_host).apply {
             super.onBackPressed()
+            Timber.d("Backing out of ${currentDestination.getScreenName()}")
             setAnalyticsScreenName(currentDestination)
         }
     }
 
     private fun setAnalyticsScreenName(destination: NavDestination?) {
 
-        val screenName = destination?.label?.toString() ?: "Unknown"
+        val screenName = destination?.getScreenName()
 
         try {
             // TODO: Add analytics to set screen names
@@ -125,6 +133,10 @@ class MainActivity : AppCompatActivity() {
         } catch (ex: Throwable) {
 
         }
+    }
+
+    private fun NavDestination?.getScreenName(): String {
+        return this?.label?.toString() ?: "Unknown"
     }
 
 }

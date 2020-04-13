@@ -12,6 +12,10 @@ ext {
     coroutinesVersion = '1.3.5'
     //android appcompat
     appcompatVersion = '1.1.0'
+    //database
+    roomVersion = '2.2.5'
+    //security
+    securityCryptoVersion = '1.0.0-beta01'
     //android KTX libs
     coreKtxVersion = '1.2.0'
     fragmentKtxVersion = '1.3.0-alpha03'
@@ -27,6 +31,10 @@ ext {
     //camera
     cameraVersion = '1.0.0-beta01'
     cameraViewVersion = '1.0.0-alpha08'
+    //debugging
+    flipperVersion = '0.31.2'
+    soloaderVersion = '0.8.0'
+    timberVersion = '4.7.1'
     //flexbox
     flexboxVersion = '2.0.0'
     //date-time

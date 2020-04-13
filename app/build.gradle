@@ -86,9 +86,14 @@ android {
     dataBinding {
         enabled = true
     }
+
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
     }
 }
 
@@ -121,6 +126,12 @@ dependencies {
     implementation "com.google.firebase:firebase-crashlytics:$firebaseCrashlyticsVersion"
     implementation "com.google.firebase:firebase-perf:$firebasePerformanceVersion"
     implementation "com.google.firebase:firebase-analytics:$firebaseAnalyticsVersion"
+    //database
+    implementation "androidx.room:room-common:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+    //security
+    implementation "androidx.security:security-crypto:$securityCryptoVersion"
     //flexbox
     implementation "com.google.android:flexbox:$flexboxVersion"
     //date-time
@@ -129,6 +140,13 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment:$navigationVersion"
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycleVersion"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycleVersion"
+    //debugging
+    // TODO: Move this to internalImplementation once internal variant is created.
+    implementation "com.facebook.flipper:flipper:$flipperVersion"
+    implementation "com.facebook.flipper:flipper-network-plugin:$flipperVersion"
+    implementation "com.facebook.flipper:flipper-leakcanary-plugin:$flipperVersion"
+    implementation "com.facebook.soloader:soloader:$soloaderVersion"
+    implementation "com.jakewharton.timber:timber:$timberVersion"
     //glide
     implementation "com.github.bumptech.glide:glide:$glideVersion"
     kapt "com.github.bumptech.glide:compiler:$glideVersion"

@@ -1,11 +1,11 @@
 package org.covital.common.data.datasource.remote
 
 import com.squareup.moshi.JsonEncodingException
-import java.lang.reflect.Type
 import okhttp3.ResponseBody
 import org.covital.common.domain.model.Empty
 import retrofit2.Converter
 import retrofit2.Retrofit
+import java.lang.reflect.Type
 
 class EmptyResponseFactory : Converter.Factory() {
 

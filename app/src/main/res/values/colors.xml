@@ -48,4 +48,13 @@
     <color name="yellow">#FFF59D</color>
     <color name="peach">#F8BBD0</color>
     <color name="lavender">#E1BEE7</color>
+
+    // Skin Tones
+    <color name="skin_tone_0">#F4DBC3</color>
+    <color name="skin_tone_1">#F2CCA7</color>
+    <color name="skin_tone_2">#F4C292</color>
+    <color name="skin_tone_3">#F5B77C</color>
+    <color name="skin_tone_4">#E19F60</color>
+    <color name="skin_tone_5">#D38A45</color>
+    <color name="skin_tone_6">#BB732E</color>
 </resources>

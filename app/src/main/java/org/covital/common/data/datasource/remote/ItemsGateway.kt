@@ -2,7 +2,6 @@ package org.covital.common.data.datasource.remote
 
 import org.covital.common.domain.Either
 
-
 class ItemsGateway(
     private val apiService: ApiService
 ) : BaseGateway() {

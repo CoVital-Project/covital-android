@@ -2,7 +2,9 @@ package org.covital.common.data.utils
 
 import com.squareup.moshi.FromJson
 import com.squareup.moshi.ToJson
-import org.threeten.bp.*
+import org.threeten.bp.Instant
+import org.threeten.bp.OffsetDateTime
+import org.threeten.bp.ZoneOffset
 import org.threeten.bp.format.DateTimeFormatter
 
 class DateAdapter {

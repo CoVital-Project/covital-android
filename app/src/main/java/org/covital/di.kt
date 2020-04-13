@@ -6,11 +6,14 @@ import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.NavHostFragment
 import org.covital.account.presentation.AccountFragment
 import org.covital.account.presentation.AccountViewModel
-import org.covital.common.data.datasource.ItemsDataSource
+import com.facebook.flipper.plugins.network.NetworkFlipperPlugin
 import org.covital.common.data.datasource.MoshiFactory
+import org.covital.common.data.datasource.PrefsFactory
 import org.covital.common.data.datasource.remote.ApiServiceFactory
 import org.covital.common.data.datasource.remote.ItemsGateway
 import org.covital.common.data.repository.ItemsRepository
+import org.covital.common.data.repository.DatabaseFactory
+import org.covital.common.logging.Acorn
 import org.covital.common.presentation.MainActivity
 import org.covital.common.presentation.MainViewModel
 import org.covital.common.presentation.Navigator
@@ -29,20 +32,18 @@ import org.covital.settings.presentation.SettingsFragment
 import org.covital.settings.presentation.SettingsViewModel
 import org.koin.android.ext.android.getKoin
 import org.koin.android.ext.koin.androidContext
-import org.koin.android.ext.koin.androidLogger
 import org.koin.androidx.viewmodel.ViewModelParameter
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.androidx.viewmodel.koin.getViewModel
 import org.koin.core.context.startKoin
-import org.koin.core.logger.Level
 import org.koin.core.parameter.ParametersDefinition
 import org.koin.core.qualifier.Qualifier
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
+
 fun App.initKoin() {
     startKoin {
-        androidLogger(Level.DEBUG)
         androidContext(this@initKoin)
         modules(
             listOf(
@@ -56,9 +57,13 @@ fun App.initKoin() {
 
 private val appModule = module {
     single { MoshiFactory.create() }
-    single { ApiServiceFactory.create(get()) }
+    single { ApiServiceFactory.create(get(), get()) }
     single { Navigator() }
     single { MeasurementsViewModel(get()) }
+    single { PrefsFactory.create(androidContext(), get()) }
+    single { NetworkFlipperPlugin() }
+    single { DatabaseFactory.create(get()) }
+    single { Acorn(logcatEnabled = true) }
 }
 
 private val dataModule = module {
