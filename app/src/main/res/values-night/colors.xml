@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="color_primary">#9e47ff</color>
-    <color name="color_primary_variant">#AC62FF</color>
     <color name="color_on_primary">@color/white</color>
     <color name="color_error">@color/orange_light</color>
     <color name="color_on_error">@color/black</color>
