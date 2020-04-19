@@ -4,11 +4,11 @@
     <color name="primaryTextColor">@color/black</color>
     <color name="secondaryTextColor">@color/white</color>
 
-    <color name="color_primary">#6200ee</color>
-    <color name="color_primary_variant">#9e47ff</color>
-    <color name="color_primary_dark">#3C0092</color>
+    <color name="color_primary">#2196f3</color>
+    <color name="color_primary_variant">#6ec6ff</color>
+    <color name="color_primary_dark">#0069c0</color>
     <color name="color_on_primary">@color/white</color>
-    <color name="color_error">@color/orange_dark</color>
+    <color name="color_error">@color/orange</color>
     <color name="color_on_error">@color/white</color>
     <color name="color_surface">@color/white</color>
     <color name="color_on_surface">@color/black</color>
@@ -42,8 +42,9 @@
 
     <color name="teal">#00BCD4</color>
     <color name="blue">#3F51B5</color>
-    <color name="orange_dark">#FF5722</color>
-    <color name="orange_light">#F8BD36</color>
+    <color name="orange">#ff5722</color>
+    <color name="orange_dark">#c41c00</color>
+    <color name="orange_light">#ff8a50</color>
     <color name="green">#4CAF50</color>
     <color name="yellow">#FFF59D</color>
     <color name="peach">#F8BBD0</color>
