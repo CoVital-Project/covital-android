@@ -68,6 +68,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintBottom_toBottomOf="@id/account_title"
                     android:layout_marginEnd="24dp"
+                    android:tint="@color/color_on_background"
                     />
 
                 <TextView
@@ -86,6 +87,7 @@
                     android:layout_marginStart="24dp"
                     android:layout_marginEnd="24dp"
                     style="@style/AppTheme.Subtitle1"
+                    android:drawableTint="@color/color_on_background"
                     />
 
                 <View
@@ -211,7 +213,7 @@
                 android:id="@+id/history_title_label"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/my_covital_history"
+                android:text="@string/history"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -232,6 +234,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/history_title_label"
                 android:contentDescription="@string/toggle_history_open"
                 android:layout_marginEnd="24dp"
+                android:tint="@color/color_on_surface"
                 />
 
             <TabWidget

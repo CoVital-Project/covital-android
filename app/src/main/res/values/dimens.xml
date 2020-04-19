@@ -16,10 +16,8 @@
 
     <!-- Corners -->
     <dimen name="corner_small">4dp</dimen>
-    <dimen name="corner_medium">10dp</dimen>
-    <dimen name="corner_large">30dp</dimen>
-
-
+    <dimen name="corner_medium">8dp</dimen>
+    <dimen name="corner_large">16dp</dimen>
 
     <!-- Borders -->
     <dimen name="border_small">0.5dp</dimen>

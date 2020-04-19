@@ -33,7 +33,7 @@
     <string name="medical_diagnoses">Medical Diagnoses</string>
     <string name="back_to_dashboard">Back to Dashboard</string>
     <string name="overview">Overview</string>
-    <string name="my_covital_history">My CoVital History</string>
+    <string name="history">History</string>
     <string name="account">Account</string>
     <string name="diagnose">Diagnose</string>
     <string name="toggle_history_open">Toggle History Open</string>
@@ -58,6 +58,7 @@
     <string name="create_account">Create Account</string>
     <string name="sign_in">Sign In</string>
     <string name="blood_oxygen">Hg O₂</string>
+    <string name="oxygen">O₂</string>
     <string name="gender">Gender</string>
     <string name="general_questions">General Questions</string>
     <string name="this_information_will_be_used_for_the_sole_purpose_of">This information will be used for the sole purpose of...</string>
@@ -71,4 +72,5 @@
     <string name="autoimmune_disease">• Autoimmune Disease</string>
     <string name="are_you_diagnosed_with">Are you Diagnosed with:</string>
     <string name="do_you_use_medicine_that_suppresses_your_immune_system">Do You Use Medicine That Suppresses Your Immune System?</string>
+    <string name="bpm">bpm</string>
 </resources>

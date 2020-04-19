@@ -26,6 +26,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginStart="10dp"
         tools:src="@drawable/ic_height"
+        android:tint="@color/color_primary"
+        android:importantForAccessibility="no"
         />
 
     <TextView
