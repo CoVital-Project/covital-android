@@ -8,7 +8,7 @@ class LoginViewModel(
 ) : BaseViewModel() {
 
     fun onCreateAccountTapped() {
-        TODO("Not yet implemented")
+        navigator.goTo(LoginFragmentDirections.actionLoginFragmentToOnboardingFragment())
     }
 
     fun onSignInTapped() {

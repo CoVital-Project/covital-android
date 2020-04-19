@@ -43,6 +43,9 @@
         <action
             android:id="@+id/action_loginFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_onboardingFragment"
+            app:destination="@id/onboardingFragment" />
     </fragment>
     <navigation android:id="@+id/measure_graph"
         app:startDestination="@id/measureFragment">
@@ -109,4 +112,14 @@
         app:popUpTo="@id/graph"
         app:popUpToInclusive="true"
         />
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="org.covital.onboarding.presentation.OnboardingFragment"
+        android:label="Onboarding"
+        tools:layout="@layout/fragment_onboarding"
+        >
+        <action
+            android:id="@+id/action_onboardingFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
 </navigation>

@@ -135,7 +135,18 @@
         <item name="android:textSize">@dimen/text_size_default</item>
         <item name="android:letterSpacing">0.05</item>
     </style>
-
+    <style name="AppTheme.DropDownButton" parent="AppTheme.OutlinedButton">
+        <item name="android:textColor">@color/color_primary</item>
+<!--        <item name="backgroundTint">@color/button_background_checkable</item>-->
+        <item name="android:textAlignment">gravity</item>
+        <item name="android:gravity">start|center_vertical</item>
+        <item name="android:paddingStart">40dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:drawableEnd">@drawable/ic_arrow_black_small</item>
+        <item name="android:clickable">true</item>
+    </style>
     <style name="AppTheme.TextView" parent="Widget.MaterialComponents.TextView">
         <item name="android:textAppearance">@style/AppTheme.TextAppearance.Body1</item>
     </style>

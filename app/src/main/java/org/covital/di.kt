@@ -28,6 +28,8 @@ import org.covital.login.presentation.LoginViewModel
 import org.covital.measurements.presentation.MeasureFragment
 import org.covital.measurements.presentation.MeasureViewModel
 import org.covital.measurements.presentation.MeasurementsViewModel
+import org.covital.onboarding.presentation.OnboardingFragment
+import org.covital.onboarding.presentation.OnboardingViewModel
 import org.covital.settings.presentation.SettingsFragment
 import org.covital.settings.presentation.SettingsViewModel
 import org.koin.android.ext.android.getKoin
@@ -90,6 +92,10 @@ private val scopedModules = module {
 
     scope(named<FeedbackFragment>()) {
         viewModel { FeedbackViewModel(get()) }
+    }
+
+    scope(named<OnboardingFragment>()) {
+        viewModel { OnboardingViewModel(get()) }
     }
 
     scope(named<RegularDiagnoseFragment>()) {
