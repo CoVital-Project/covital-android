@@ -11,7 +11,7 @@ import org.covital.account.usecase.AccountInteractor
 import org.covital.common.domain.Either
 import org.covital.common.domain.entities.User
 import org.covital.common.presentation.BaseViewModel
-import org.covital.common.presentation.Navigator
+import org.covital.common.navigation.Navigator
 
 class AccountViewModel(
     private val navigator: Navigator,

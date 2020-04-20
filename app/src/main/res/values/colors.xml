@@ -16,6 +16,8 @@
     <color name="color_on_background">@color/black</color>
     <color name="color_primary_on_background">@color/color_primary</color>
     <color name="color_status_bar">@color/white</color>
+    <color name="shadow_on_background">@color/gray_238</color>
+    <color name="page_indicator_on_background">@color/gray_170</color>
     <color name="color_border_on_background">@color/gray_238</color>
     <color name="color_border_on_surface">@color/gray_246</color>
 

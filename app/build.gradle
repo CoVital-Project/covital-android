@@ -33,7 +33,7 @@ android {
             if ("$System.env.RELEASE_STORE_PASSWORD" != "null") {
                 storeFile file("upload.keystore")
                 storePassword "$System.env.RELEASE_STORE_PASSWORD"
-                keyAlias "hinge"
+                keyAlias "covital"
                 keyPassword "$System.env.RELEASE_ALIAS_PASSWORD"
             }
         }

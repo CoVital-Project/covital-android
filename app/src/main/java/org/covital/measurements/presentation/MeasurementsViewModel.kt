@@ -3,7 +3,7 @@ package org.covital.measurements.presentation
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import org.covital.common.presentation.BaseViewModel
-import org.covital.common.presentation.Navigator
+import org.covital.common.navigation.Navigator
 import org.covital.common.presentation.utils.SingleLiveEvent
 
 class MeasurementsViewModel(

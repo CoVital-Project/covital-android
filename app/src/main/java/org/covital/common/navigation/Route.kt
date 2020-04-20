@@ -1,4 +1,4 @@
-package org.covital.common.presentation.navigation
+package org.covital.common.navigation
 
 import androidx.navigation.NavDirections
 

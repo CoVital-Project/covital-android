@@ -61,7 +61,7 @@
     <string name="oxygen">O₂</string>
     <string name="gender">Gender</string>
     <string name="general_questions">General Questions</string>
-    <string name="this_information_will_be_used_for_the_sole_purpose_of">This information will be used for the sole purpose of...</string>
+    <string name="this_information_will_be_used_for_the_sole_purpose_of">This information will be used for the sole purpose of…</string>
     <string name="female">Female</string>
     <string name="male">Male</string>
     <string name="year_of_birth">Year of Birth</string>
@@ -73,5 +73,15 @@
     <string name="are_you_diagnosed_with">Are you Diagnosed with:</string>
     <string name="do_you_use_medicine_that_suppresses_your_immune_system">Do You Use Medicine That Suppresses Your Immune System?</string>
     <string name="bpm">bpm</string>
+    <string name="before_we_get_started">Before we get started</string>
+    <string name="the_answers_and_data_you_provide">The answers and data you provide helps us improve our ability to measure your blood oxygen saturation and heart rate.</string>
+    <string name="they_will_not_be_shared">They will not be shared with any outside companies or others without your permission. All questions are optional.</string>
+    <string name="explain_optional_questions"><![CDATA[In order to record your blood oxgyen levels & messure your heart rate. We need you to answer the following optional questions.]]></string>
+    <string name="your_personal_info">Your Personal Info</string>
+    <string name="skip">Skip</string>
+    <string name="no_thanks">No Thanks</string>
+    <string name="use_you_camera">Use you Camera</string>
+    <string name="need_camera_to_monitor_oxygen_levels">To record your blood oxygen levels. We need you to allow CoVital to use your camera.</string>
+    <string name="no_intent_handler">You do not have %1$s installed</string>
     <string name="add_new_measurement">Add New Measurement</string>
 </resources>

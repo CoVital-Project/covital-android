@@ -3,17 +3,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/graph"
-    app:startDestination="@id/dashboardFragment">
+    app:startDestination="@id/explainFragment">
 
+    <fragment
+        android:id="@+id/explainFragment"
+        android:name="org.covital.explain.presentation.ExplainFragment"
+        android:label="Explain"
+        tools:layout="@layout/fragment_explain"
+        >
+        <action
+            android:id="@+id/action_explainFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/graph"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_explainFragment_to_onboardingFragment"
+            app:destination="@id/onboardingFragment"
+            app:popUpTo="@id/graph"
+            app:popUpToInclusive="true"
+            />
+        <action
+            android:id="@+id/action_explainFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/graph"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
     <fragment
         android:id="@+id/dashboardFragment"
         android:name="org.covital.dashboard.presentation.DashboardFragment"
         android:label="Dashboard"
         tools:layout="@layout/fragment_dashboard"
         >
-        <action
-            android:id="@+id/action_dashboardFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
         <action
             android:id="@+id/action_dashboardFragment_to_regularDiagnoseFragment"
             app:destination="@id/regularDiagnoseFragment" />

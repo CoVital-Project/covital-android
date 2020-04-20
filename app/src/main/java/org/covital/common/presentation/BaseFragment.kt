@@ -12,15 +12,17 @@ abstract class BaseFragment<Binding: ViewDataBinding> : Fragment() {
 
     abstract val layoutRes: Int
 
+    lateinit var ui: Binding
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val binding = DataBindingUtil.inflate<Binding>(inflater, layoutRes, container, false)
-        binding.lifecycleOwner = viewLifecycleOwner
-        setupBinding(binding)
-        return binding.root
+        ui = DataBindingUtil.inflate<Binding>(inflater, layoutRes, container, false)
+        ui.lifecycleOwner = viewLifecycleOwner
+        setupBinding(ui)
+        return ui.root
     }
 
     open fun setupBinding(binding: Binding) {}

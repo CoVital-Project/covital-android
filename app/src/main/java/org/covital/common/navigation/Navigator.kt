@@ -1,8 +1,7 @@
-package org.covital.common.presentation
+package org.covital.common.navigation
 
 import androidx.lifecycle.LiveData
 import androidx.navigation.NavDirections
-import org.covital.common.presentation.navigation.Route
 import org.covital.common.presentation.utils.SingleLiveEvent
 
 open class Navigator {

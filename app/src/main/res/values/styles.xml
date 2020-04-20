@@ -65,9 +65,14 @@
         <item name="android:textColor">@color/color_on_surface</item>
         <item name="android:textSize">@dimen/text_size_xxxxxlarge</item>
     </style>
-    <style name="AppTheme.Headline6" parent="Base.TextAppearance.MaterialComponents.Headline6">
+    <style name="AppTheme.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
         <item name="android:textColor">@color/color_on_surface</item>
         <item name="android:textSize">@dimen/text_size_xxxxlarge</item>
+    </style>
+    <style name="AppTheme.Explain.Headline" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="android:textColor">@color/color_on_surface</item>
+        <item name="android:textSize">@dimen/text_size_xxxlarge</item>
+        <item name="android:textStyle">bold</item>
     </style>
     <style name="AppTheme.Caption" parent="TextAppearance.MaterialComponents.Caption">
         <item name="fontFamily">sans-serif</item>

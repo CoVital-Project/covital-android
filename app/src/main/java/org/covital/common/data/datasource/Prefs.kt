@@ -165,4 +165,8 @@ class Prefs(
     open var lastAppUpgrade: Instant
         get() = prefs.getNonNullInstant("lastAppUpgrade", firstAppLaunch ?: Instant.now())
         set(value) = prefs.setNonNullInstant("lastAppUpgrade", value)
+
+    open var cameraPermissionDenied: Boolean
+        get() = prefs.getBoolean("cameraPermissionDenied", false)
+        set(value) = prefs.put("cameraPermissionDenied", value)
 }

@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import org.covital.common.presentation.BaseViewModel
-import org.covital.common.presentation.Navigator
+import org.covital.common.navigation.Navigator
 import org.threeten.bp.Instant
 import java.util.*
 

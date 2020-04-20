@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Transition
+        app:constraintSetStart="@id/getting_started_a"
+        app:constraintSetEnd="@id/getting_started_b"
+        app:duration="400"
+        app:motionInterpolator="standard"
+        >
+
+        <OnSwipe app:dragDirection="dragLeft" />
+
+    </Transition>
+    <Transition
+        app:constraintSetStart="@id/getting_started_b"
+        app:constraintSetEnd="@id/getting_started_c"
+        app:duration="400"
+        app:motionInterpolator="standard"
+        >
+
+        <OnSwipe app:dragDirection="dragLeft" />
+
+    </Transition>
+
+    <ConstraintSet android:id="@+id/getting_started_a">
+        <Constraint android:id="@id/skip_button">
+            <Layout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+            <PropertySet android:alpha="-1" />
+        </Constraint>
+        <Constraint android:id="@id/no_thanks_button">
+            <Layout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+            <PropertySet android:alpha="-1" />
+        </Constraint>
+        <Constraint android:id="@id/page_a">
+            <PropertySet android:alpha="1" />
+            <Transform android:translationX="0dp" android:scaleX="1.0" android:scaleY="1.0" />
+        </Constraint>
+        <Constraint android:id="@id/page_b">
+            <PropertySet android:alpha="-1" />
+            <Transform android:translationX="64dp" android:scaleX="0.8" android:scaleY="0.8" />
+        </Constraint>
+        <Constraint android:id="@id/page_c">
+            <PropertySet android:alpha="-1" />
+            <Transform android:translationX="64dp" android:scaleX="0.8" android:scaleY="0.8" />
+        </Constraint>
+        <Constraint android:id="@id/page_indicator_a">
+            <CustomAttribute app:attributeName="Crossfade" app:customFloatValue="1" />
+        </Constraint>
+        <Constraint android:id="@id/page_indicator_b">
+            <CustomAttribute app:attributeName="Crossfade" app:customFloatValue="-1" />
+        </Constraint>
+        <Constraint android:id="@id/page_indicator_c">
+            <CustomAttribute app:attributeName="Crossfade" app:customFloatValue="-1" />
+        </Constraint>
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/getting_started_b">
+        <Constraint android:id="@id/skip_button">
+            <Layout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                />
+            <PropertySet android:alpha="1" />
+        </Constraint>
+        <Constraint android:id="@id/no_thanks_button">
+            <Layout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+            <PropertySet android:alpha="-1" />
+        </Constraint>
+        <Constraint android:id="@id/page_a">
+            <PropertySet android:alpha="-1" />
+            <Transform android:translationX="-64dp" android:scaleX="0.8" android:scaleY="0.8" />
+        </Constraint>
+        <Constraint android:id="@id/page_b">
+            <PropertySet android:alpha="1" />
+            <Transform android:translationX="0dp" android:scaleX="1.0" android:scaleY="1.0" />
+        </Constraint>
+        <Constraint android:id="@id/page_c">
+            <PropertySet android:alpha="-1" />
+            <Transform android:translationX="64dp" android:scaleX="0.8" android:scaleY="0.8" />
+        </Constraint>
+        <Constraint android:id="@id/page_indicator_a">
+            <CustomAttribute app:attributeName="Crossfade" app:customFloatValue="-1" />
+        </Constraint>
+        <Constraint android:id="@id/page_indicator_b">
+            <CustomAttribute app:attributeName="Crossfade" app:customFloatValue="1" />
+        </Constraint>
+        <Constraint android:id="@id/page_indicator_c">
+            <CustomAttribute app:attributeName="Crossfade" app:customFloatValue="-1" />
+        </Constraint>
+    </ConstraintSet>
+    <ConstraintSet android:id="@+id/getting_started_c">
+        <Constraint android:id="@id/skip_button">
+            <Layout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+            <PropertySet android:alpha="-1" />
+        </Constraint>
+        <Constraint android:id="@id/no_thanks_button">
+            <Layout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="16dp"
+                android:layout_marginBottom="16dp"
+                />
+            <PropertySet android:alpha="1" />
+        </Constraint>
+        <Constraint android:id="@id/page_a">
+            <PropertySet android:alpha="-1" />
+            <Transform android:translationX="-64dp" android:scaleX="0.8" android:scaleY="0.8" />
+        </Constraint>
+        <Constraint android:id="@id/page_b">
+            <PropertySet android:alpha="-1" />
+            <Transform android:translationX="-64dp" android:scaleX="0.8" android:scaleY="0.8" />
+        </Constraint>
+        <Constraint android:id="@id/page_c">
+            <PropertySet android:alpha="1" />
+            <Transform android:translationX="0dp" android:scaleX="1.0" android:scaleY="1.0" />
+        </Constraint>
+        <Constraint android:id="@id/page_indicator_a">
+            <CustomAttribute app:attributeName="Crossfade" app:customFloatValue="-1" />
+        </Constraint>
+        <Constraint android:id="@id/page_indicator_b">
+            <CustomAttribute app:attributeName="Crossfade" app:customFloatValue="-1" />
+        </Constraint>
+        <Constraint android:id="@id/page_indicator_c">
+            <CustomAttribute app:attributeName="Crossfade" app:customFloatValue="1" />
+        </Constraint>
+    </ConstraintSet>
+</MotionScene>

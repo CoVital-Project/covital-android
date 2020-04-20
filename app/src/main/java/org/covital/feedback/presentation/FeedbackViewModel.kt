@@ -1,7 +1,7 @@
 package org.covital.feedback.presentation
 
 import org.covital.common.presentation.BaseViewModel
-import org.covital.common.presentation.Navigator
+import org.covital.common.navigation.Navigator
 
 class FeedbackViewModel(
     private val navigator: Navigator

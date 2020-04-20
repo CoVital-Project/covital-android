@@ -1,4 +1,4 @@
-package org.covital.common.presentation
+package org.covital.main.presentation
 
 import android.content.Intent
 import android.graphics.Color
@@ -10,7 +10,8 @@ import androidx.navigation.Navigation.findNavController
 import kotlinx.android.synthetic.main.activity_main.*
 import org.covital.R
 import org.covital.common.extensions.observe
-import org.covital.common.presentation.navigation.Route
+import org.covital.common.navigation.Route
+import org.covital.common.presentation.BaseFragment
 import org.koin.androidx.scope.lifecycleScope
 import org.koin.androidx.viewmodel.scope.viewModel
 import timber.log.Timber
@@ -32,6 +33,15 @@ class MainActivity : AppCompatActivity() {
                 else -> navigateBack()
             }
         }
+
+        observe(viewModel.getLivePermissions()) { permission ->
+            viewModel.requestPermission(this@MainActivity, permission)
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        viewModel.onPermissionResult(requestCode, permissions, grantResults)
     }
 
     override fun onResume() {

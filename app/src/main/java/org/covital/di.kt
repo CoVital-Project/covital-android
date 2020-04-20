@@ -14,17 +14,21 @@ import org.covital.common.data.datasource.remote.ApiServiceFactory
 import org.covital.common.data.datasource.remote.ItemsGateway
 import org.covital.common.data.repository.*
 import org.covital.common.logging.Acorn
-import org.covital.common.presentation.MainActivity
-import org.covital.common.presentation.MainViewModel
-import org.covital.common.presentation.Navigator
+import org.covital.main.presentation.MainActivity
+import org.covital.main.presentation.MainViewModel
+import org.covital.common.navigation.Navigator
+import org.covital.common.permissions.Approver
 import org.covital.dashboard.presentation.DashboardFragment
 import org.covital.dashboard.presentation.DashboardViewModel
 import org.covital.diagnose.presentation.RegularDiagnoseFragment
 import org.covital.diagnose.presentation.RegularDiagnoseViewModel
+import org.covital.explain.presentation.ExplainFragment
+import org.covital.explain.presentation.ExplainViewModel
 import org.covital.feedback.presentation.FeedbackFragment
 import org.covital.feedback.presentation.FeedbackViewModel
 import org.covital.login.presentation.LoginFragment
 import org.covital.login.presentation.LoginViewModel
+import org.covital.main.usecases.MainInteractor
 import org.covital.measurements.presentation.MeasureFragment
 import org.covital.measurements.presentation.MeasureViewModel
 import org.covital.measurements.presentation.MeasurementsViewModel
@@ -61,6 +65,7 @@ private val appModule = module {
     single { MoshiFactory.create() }
     single { ApiServiceFactory.create(get(), get()) }
     single { Navigator() }
+    single { Approver() }
     single { MeasurementsViewModel(get()) }
     single { PrefsFactory.create(androidContext(), get()) }
     single { NetworkFlipperPlugin() }
@@ -74,6 +79,8 @@ private val dataModule = module {
     factory { RecordingRepository(get()) }
     factory { ItemsRepository(get()) }
     factory { ItemsGateway(get()) }
+    factory { PermissionRepository(get()) }
+    factory { MainInteractor(get()) }
     factory { AccountInteractor(get(), get(), get()) }
 }
 
@@ -98,6 +105,10 @@ private val scopedModules = module {
         viewModel { FeedbackViewModel(get()) }
     }
 
+    scope(named<ExplainFragment>()) {
+        viewModel { ExplainViewModel(get(), get()) }
+    }
+
     scope(named<OnboardingFragment>()) {
         viewModel { OnboardingViewModel(get()) }
     }
@@ -107,7 +118,7 @@ private val scopedModules = module {
     }
 
     scope(named<MainActivity>()) {
-        viewModel { MainViewModel(get()) }
+        viewModel { MainViewModel(get(), get(), get()) }
     }
 
     scope(named<MeasureFragment>()) {

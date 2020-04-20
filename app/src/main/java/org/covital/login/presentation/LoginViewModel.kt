@@ -1,7 +1,7 @@
 package org.covital.login.presentation
 
 import org.covital.common.presentation.BaseViewModel
-import org.covital.common.presentation.Navigator
+import org.covital.common.navigation.Navigator
 
 class LoginViewModel(
     private val navigator: Navigator
