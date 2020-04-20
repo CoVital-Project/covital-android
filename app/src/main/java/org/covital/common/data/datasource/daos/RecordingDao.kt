@@ -16,4 +16,7 @@ abstract class RecordingDao : BaseDao<Recording>() {
     @Query("SELECT * FROM recording")
     abstract fun getUpdates(): Flow<List<Recording>>
 
+    @Query("SELECT * FROM recording LIMIT 9")
+    abstract suspend fun getRecent(): List<Recording>
+
 }

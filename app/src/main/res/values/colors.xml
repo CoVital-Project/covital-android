@@ -16,6 +16,8 @@
     <color name="color_on_background">@color/black</color>
     <color name="color_primary_on_background">@color/color_primary</color>
     <color name="color_status_bar">@color/white</color>
+    <color name="color_border_on_background">@color/gray_238</color>
+    <color name="color_border_on_surface">@color/gray_246</color>
 
     <color name="transparent">@color/transparent_white</color>
     <color name="transparent_black">#00000000</color>
@@ -34,11 +36,11 @@
     <color name="gray_204">#ffcccccc</color>
     <color name="gray_170">#ffaaaaaa</color>
     <color name="gray_136">#ff888888</color>
-    <color name="gray_102">#666666</color>
+    <color name="gray_102">#ff666666</color>
     <color name="gray_85">#ff555555</color>
     <color name="gray_51">#ff333333</color>
-    <color name="gray_46">#ff2e2e2e</color>
-    <color name="gray_35">#ff232323</color>
+    <color name="gray_34">#ff222222</color>
+    <color name="gray_17">#ff111111</color>
 
     <color name="teal">#00BCD4</color>
     <color name="blue">#3F51B5</color>

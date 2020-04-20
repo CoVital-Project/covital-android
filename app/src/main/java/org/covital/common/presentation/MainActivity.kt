@@ -1,6 +1,7 @@
 package org.covital.common.presentation
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavDestination
@@ -137,6 +138,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun NavDestination?.getScreenName(): String {
         return this?.label?.toString() ?: "Unknown"
+    }
+
+    fun setStatusBarDarkness(opacity: Float, progress: Float = 1f) {
+        window.statusBarColor = Color.argb((255 * opacity * progress).toInt(), 0, 0, 0)
     }
 
 }

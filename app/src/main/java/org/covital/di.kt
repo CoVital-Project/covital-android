@@ -7,12 +7,12 @@ import androidx.navigation.fragment.NavHostFragment
 import org.covital.account.presentation.AccountFragment
 import org.covital.account.presentation.AccountViewModel
 import com.facebook.flipper.plugins.network.NetworkFlipperPlugin
+import org.covital.account.usecase.AccountInteractor
 import org.covital.common.data.datasource.MoshiFactory
 import org.covital.common.data.datasource.PrefsFactory
 import org.covital.common.data.datasource.remote.ApiServiceFactory
 import org.covital.common.data.datasource.remote.ItemsGateway
-import org.covital.common.data.repository.ItemsRepository
-import org.covital.common.data.repository.DatabaseFactory
+import org.covital.common.data.repository.*
 import org.covital.common.logging.Acorn
 import org.covital.common.presentation.MainActivity
 import org.covital.common.presentation.MainViewModel
@@ -69,8 +69,12 @@ private val appModule = module {
 }
 
 private val dataModule = module {
+    factory { UserRespository(get()) }
+    factory { DiagnosisRepository(get()) }
+    factory { RecordingRepository(get()) }
     factory { ItemsRepository(get()) }
     factory { ItemsGateway(get()) }
+    factory { AccountInteractor(get(), get(), get()) }
 }
 
 private val scopedModules = module {
@@ -83,7 +87,7 @@ private val scopedModules = module {
     }
 
     scope(named<AccountFragment>()) {
-        viewModel { AccountViewModel(get()) }
+        viewModel { AccountViewModel(get(), get()) }
     }
 
     scope(named<SettingsFragment>()) {

@@ -3,7 +3,10 @@ package org.covital.common.data.utils
 import androidx.room.TypeConverter
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.Types
+import org.covital.common.domain.model.Gender
+import org.covital.common.domain.model.HeightSystem
 import org.covital.common.domain.model.SkinTone
+import org.covital.common.domain.model.WeightSystem
 import org.threeten.bp.Instant
 
 class RoomConverters {
@@ -26,6 +29,36 @@ class RoomConverters {
     @TypeConverter
     fun dateToSkinTone(skinTone: SkinTone?): Int? {
         return skinTone?.id
+    }
+
+    @TypeConverter
+    fun fromGender(value: Int?): Gender? {
+        return if (value == null) null else Gender.fromId(value)
+    }
+
+    @TypeConverter
+    fun dateToGender(gender: Gender?): Int? {
+        return gender?.ordinal
+    }
+
+    @TypeConverter
+    fun fromWeightSystem(value: Int?): WeightSystem? {
+        return if (value == null) null else WeightSystem.fromId(value)
+    }
+
+    @TypeConverter
+    fun dateToWeightSystem(system: WeightSystem?): Int? {
+        return system?.ordinal
+    }
+
+    @TypeConverter
+    fun fromHeightSystem(value: Int?): HeightSystem? {
+        return if (value == null) null else HeightSystem.fromId(value)
+    }
+
+    @TypeConverter
+    fun dateToHeightSystem(system: HeightSystem?): Int? {
+        return system?.ordinal
     }
 
     @TypeConverter

@@ -1,5 +1,9 @@
 package org.covital.common.domain
 
+import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
+import java.lang.IllegalStateException
+
 typealias Success<T> = Either.Success<T>
 typealias Failure<T> = Either.Failure<T>
 
@@ -8,6 +12,21 @@ sealed class Either<T> {
     data class Failure<T>(val error: Throwable): Either<T>()
 
     fun <R> map(mapper: (T) -> R): Either<R> {
+        return when (this) {
+            is Success -> {
+                try {
+                    Success(mapper(value))
+                } catch (ex: Throwable) {
+                    Failure<R>(ex)
+                }
+            }
+            is Failure -> Failure<R>(
+                error
+            )
+        }
+    }
+
+    suspend fun <R> pmap(mapper: suspend (T) -> R): Either<R> {
         return when (this) {
             is Success -> {
                 try {
@@ -66,4 +85,8 @@ sealed class Either<T> {
             return Failure(ex)
         }
     }
+}
+
+fun <T, R> Either<List<T>>.remap(mapper: (T) -> R): Either<List<R>> {
+    return map { it.map(mapper) }
 }

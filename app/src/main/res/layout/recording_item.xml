@@ -12,7 +12,7 @@
             name="time"
             type="String" />
         <variable
-            name="bloodOxygen"
+            name="hgo2"
             type="Integer" />
         <variable
             name="bpm"
@@ -37,6 +37,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:background="@drawable/outline_background_item"
+            android:foreground="?android:attr/selectableItemBackground"
             />
 
         <TextView
@@ -76,7 +77,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="12dp"
-            android:text="@{Integer.toString(safeUnbox(bloodOxygen)) + '%'}"
+            android:text="@{Integer.toString(safeUnbox(hgo2)) + '%'}"
             tools:text="97%"
             style="@style/AppTheme.LargeValue"
             />

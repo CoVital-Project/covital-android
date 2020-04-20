@@ -1,58 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout>
 
-    <View
-        android:id="@+id/background"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="1:1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="16dp"
-        android:background="@color/color_surface"
-        />
+    <data>
 
-    <ImageView
-        android:id="@+id/icon"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        app:layout_constraintTop_toTopOf="@id/background"
-        app:layout_constraintStart_toStartOf="@id/background"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="10dp"
-        tools:src="@drawable/ic_height"
-        android:tint="@color/color_primary"
-        android:importantForAccessibility="no"
-        />
+        <import type="android.view.View" />
+        <import type="android.graphics.drawable.Drawable" />
+        <variable
+            name="itemIcon"
+            type="Drawable" />
+        <variable
+            name="itemTitle"
+            type="String" />
+        <variable
+            name="itemValue"
+            type="String" />
+        <variable
+            name="valueVisible"
+            type="Boolean" />
+        <variable
+            name="skinToneVisible"
+            type="Boolean" />
+        <variable
+            name="skinToneColor"
+            type="Integer" />
 
-    <TextView
-        android:id="@+id/subtitle"
-        android:layout_width="0dp"
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/icon"
-        app:layout_constraintStart_toStartOf="@id/background"
-        app:layout_constraintEnd_toEndOf="@id/background"
-        android:layout_marginTop="6dp"
-        android:layout_marginStart="8dp"
-        tools:text="Height"
-        />
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:padding="8dp">
 
-    <TextView
-        android:id="@+id/value"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/subtitle"
-        app:layout_constraintStart_toStartOf="@id/background"
-        app:layout_constraintEnd_toEndOf="@id/background"
-        android:layout_marginTop="6dp"
-        android:layout_marginStart="8dp"
-        tools:text="183cm"
-        style="@style/AppTheme.Subtitle2"
-        />
+        <View
+            android:id="@+id/surface"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/color_surface"
+            android:foreground="?android:attr/selectableItemBackground"
+            />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintTop_toTopOf="@id/surface"
+            app:layout_constraintStart_toStartOf="@id/surface"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:src="@{itemIcon}"
+            tools:src="@drawable/ic_height"
+            android:tint="@color/color_primary"
+            android:importantForAccessibility="no"
+            />
+
+        <TextView
+            android:id="@+id/subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/icon"
+            app:layout_constraintStart_toStartOf="@id/surface"
+            app:layout_constraintEnd_toEndOf="@id/surface"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="8dp"
+            android:text="@{itemTitle}"
+            tools:text="Height"
+            android:textSize="10sp"
+            />
+
+        <TextView
+            android:id="@+id/value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/subtitle"
+            app:layout_constraintStart_toStartOf="@id/surface"
+            app:layout_constraintEnd_toEndOf="@id/surface"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="8dp"
+            android:text="@{itemValue}"
+            tools:text="183cm"
+            style="@style/AppTheme.Subtitle2"
+            android:textSize="19sp"
+            android:visibility="@{valueVisible ? View.VISIBLE : View.GONE}"
+            />
+
+        <View
+            android:id="@+id/skin_tone"
+            android:layout_width="0dp"
+            android:layout_height="32dp"
+            app:layout_constraintTop_toBottomOf="@id/subtitle"
+            app:layout_constraintStart_toStartOf="@id/surface"
+            app:layout_constraintEnd_toEndOf="@id/surface"
+            android:background="@drawable/rounded_rectangle_mask"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/skin_tone_3"
+            android:visibility="@{skinToneVisible ? View.VISIBLE : View.GONE}"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

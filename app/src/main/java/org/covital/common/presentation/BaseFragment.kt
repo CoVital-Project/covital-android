@@ -32,4 +32,8 @@ abstract class BaseFragment<Binding: ViewDataBinding> : Fragment() {
     open fun onBackPressed(): Boolean {
         return false
     }
+
+    protected fun setStatusBarDarkness(opacity: Float, progress: Float = 1f) {
+        (requireActivity() as? MainActivity)?.setStatusBarDarkness(opacity, progress)
+    }
 }

@@ -73,4 +73,5 @@
     <string name="are_you_diagnosed_with">Are you Diagnosed with:</string>
     <string name="do_you_use_medicine_that_suppresses_your_immune_system">Do You Use Medicine That Suppresses Your Immune System?</string>
     <string name="bpm">bpm</string>
+    <string name="add_new_measurement">Add New Measurement</string>
 </resources>

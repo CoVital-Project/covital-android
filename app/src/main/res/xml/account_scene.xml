@@ -5,6 +5,8 @@
     <Transition
         app:constraintSetStart="@id/collapsed"
         app:constraintSetEnd="@id/expanded"
+        app:duration="400"
+        app:motionInterpolator="standard"
         >
 
         <OnSwipe
